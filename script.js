@@ -16,20 +16,20 @@ function getNameAlternative() { // names to replace instances of "Premier Ford"
     return randomName
 }
 function getNameNation() { // names to replace instances of "FordNation"
-    const names = ['FraudNation', 'ThugNation', "Douggie's Goons"];
+    const names = ['FraudNation', 'ThugNation', "DouggiesGoons"];
     const randomName = names[Math.floor(Math.random() * names.length)];
     return randomName
 }
 function filter(text) {
-    if (text.hasChildNodes()) {
-        text.childNodes.forEach(filter);
-    }
-    else if (text.nodeType === Text.TEXT_NODE) {
+    if (text.nodeType === Text.TEXT_NODE) {
         text.textContent = text.textContent.replace(/doug ford/gi, getName())
-        text.textContent = text.textContent.replace(/dougford/gi, getName().split(" ").join("").toLowerCase())
+        text.textContent = text.textContent.replace(/dougford/gi, getName().split(" ").join(""))
         text.textContent = text.textContent.replace(/premier ford/gi, getNameAlternative())
         text.textContent = text.textContent.replace(/premier doug/gi, getNameAlternative())
         text.textContent = text.textContent.replace(/douglas robert ford/gi, getName())
         text.textContent = text.textContent.replace(/fordnation/gi, getNameNation())
+    }
+    else if (text.hasChildNodes()) {
+        text.childNodes.forEach(filter);
     }
 }
