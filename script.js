@@ -25,7 +25,7 @@ function filter(text) {
         text.textContent = text.textContent.replace(/doug ford/gi, getName())
         text.textContent = text.textContent.replace(/dougford/gi, getName().split(" ").join(""))
         text.textContent = text.textContent.replace(/premier ford/gi, getNameAlternative())
-        text.textContent = text.textContent.replace(/premier doug/gi, getNameAlternative())
+        text.textContent = text.textContent.replace(/premier doug ford/gi, getNameAlternative())
         text.textContent = text.textContent.replace(/douglas robert ford/gi, getName())
         text.textContent = text.textContent.replace(/fordnation/gi, getNameNation())
     }
