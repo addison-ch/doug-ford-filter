@@ -33,3 +33,17 @@ function filter(text) {
         text.childNodes.forEach(filter);
     }
 }
+
+document.onreadystatechange = function () {
+    if (document.readyState === 'complete') {
+        filter(document.body);
+    }
+};
+window.onload = function () {
+    filter(document.body);
+};
+
+
+window.setInterval(function () {
+    filter(document.body);
+}, 800);
